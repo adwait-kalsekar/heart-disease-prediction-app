@@ -1,0 +1,296 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<div class="slideshow-container">
+    <div class="project-content">
+
+        <div class="slides mySlides">
+            <h1>Problem Statement:</h1>
+            <h4>
+                Cardiovascular diseases, including heart disease, are leading causes of morbidity and mortality worldwide. 
+                <br>
+                <br>
+                Approximately 6.7 million Americans over 20 years of age have heart failure (HF), and the prevalence is expected to rise to 8.5 million Americans by 2030.
+                Early detection and accurate prediction of heart disease risk can significantly contribute to preventive healthcare strategies. 
+                <br>
+                 <br>
+                The goal of this machine learning project is to develop a predictive model that can assess the probability of an individual having heart disease based on a set of relevant features.
+            </h4>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+
+        <div class="slides mySlides">
+            <h1>Objectives:</h1>
+            <h4>
+                <ul> 
+                    <li>Data Preprocessing - achieve a cleaned version of the original data set</li>
+
+                    <li>Visualise data to check for any correlations between features and the target to be predicted</li>
+
+                    <li>Preparing Machine Learning Models to predict if the person has a risk of Heart Disease based on various attributes of the patient</li>
+
+                    <li>Compare accuracy of different classification models</li>
+
+                    <li>Get the best model for prediction</li>
+
+                    <li>Deploy the model into a Web Application for Using on Live Data</li>
+                </ul>
+            </h4>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+
+        <div class="slides mySlides">
+            <h1>Our Dataset:</h1>
+            <table>
+                <tr>
+                    <th>COLUMNS</th>
+                    <th class="description">DESCRIPTION</th>
+                </tr>
+                <tr>
+                    <td>age</td>
+                    <td>Age in years</td>
+                </tr>
+                <tr>
+                    <td>sex</td>
+                    <td>Male or Female</td>
+                </tr>
+                <tr>
+                    <td>cp</td>
+                    <td>Chest pain type</td>
+                </tr>
+                <tr>
+                    <td>trestbps</td>
+                    <td>Resting blood pressure (in mm Hg)</td>
+                </tr>
+                <tr>
+                    <td>chol</td>
+                    <td>Serum cholestoral in mg/dl</td>
+                </tr>
+                <tr>
+                    <td>fbs</td>
+                    <td>Is fasting blood sugar > 120 mg/dl</td>
+                </tr>
+                <tr>
+                    <td>restecg</td>
+                    <td>Resting Electrocardiographic results</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="slides mySlides">
+            <h1>Our Dataset:</h1>
+            <table>
+                <tr>
+                    <th>COLUMNS</th>
+                    <th class="description">DESCRIPTION</th>
+                </tr>
+                <tr>
+                    <td>thalach</td>
+                    <td>Maximum heart rate achieved</td>
+                </tr>
+                <tr>
+                    <td>exang</td>
+                    <td>Exercise induced angina</td>
+                </tr>
+                <tr>
+                    <td>oldpeak</td>
+                    <td>ST depression induced by exercise</td>
+                </tr>
+                <tr>
+                    <td>slope</td>
+                    <td>The slope of the peak exercise ST segment</td>
+                </tr>
+                <tr>
+                    <td>ca</td>
+                    <td>No. of major vessels (0-3)</td>
+                </tr>
+                <tr>
+                    <td>thal</td>
+                    <td>Thalium stress result</td>
+                </tr>
+                <tr>
+                    <td>target</td>
+                    <td>Have disease or not </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="slides mySlides">
+            <h1>Our Solution - Classification:</h1>
+            <h4>
+                What exactly is classification?
+                <ul> 
+                    <li>Classification is a supervised learning task that involves categorizing data points into predefined classes or categories</li>
+
+                    <li>The goal is to build a predictive model that can automatically assign a class label to a new, unseen data point based on its features or attributes</li>
+
+                    <li>It plays a crucial role in automating decision-making processes and enabling systems to make predictions and assign labels to new data</li>
+                </ul>
+                <strong>So why did we choose classification?</strong>
+                <br>
+                Within our dataset, the label we are working with encompasses two values - whether the person has a heart disease or not, and we aim to predict these values using a binary classification approach.
+            </h4>
+
+        </div>
+
+        <div class="slides mySlides">
+            <h1>Methodologies used:</h1>
+            <h4>
+                <ul> 
+                    <li>Data Preprocessing</li>
+
+                    <li>Exploratory Data Analysis</li>
+
+                    <li>Data Preparation</li>
+
+                    <li>Applying Machine Learning Models</li>
+
+                    <li>Using Different Hyperparameters and Re Evaluating Models</li>
+
+                    <li>Model Evaluation and Interpretation</li>
+
+                    <li>Predicting unseen data</li>
+                </ul>
+            </h4>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+
+        <div class="slides mySlides">
+            <h1>Machine Learning Magic:</h1>
+            <h4>
+                <ul> 
+                    <li><strong>Library to be used:</strong> SciKit-Learn</li>
+
+                    <li><strong>Data preparation:</strong></li>
+
+                    <ul>
+                        <li>Splitting Data into Train and Test Splits</li>
+                        <li>Using N-Folds for Cross Validation Methods</li>
+                    </ul>
+
+                    <li><strong>Machine Learning Models Used:</strong></li>
+
+                    <ul>
+                        <li>Logistic Regression</li>
+                        <li>K-Nearest Neighbors</li>
+                        <li>Random Forest Classification</li>
+                        <li>Support Vector Classification</li>
+                    </ul>
+
+                    <li><strong>Hyperparameter Tuning for the Models</strong></li>
+
+                    <ul>
+                        <li>For KNN - using different values of K</li>
+                        <li>RandomizedSearch Cross Validation for Logistic Regression and Random Forest</li>
+                        <li>Bagging, Forward and Backward Propagation for Logistic Regression</li>
+                        <li>Gradient Boosting</li>
+                    </ul>
+
+                </ul>
+            </h4>
+        </div>
+
+        <div class="slides mySlides">
+            <h1>Model Evaluation Metrics:</h1>
+            <h4>
+                <ul> 
+                    <li><strong>Confusion Matrix</strong>
+
+                    <li><strong>Classification Report</strong></li>
+
+                    <ul>
+                        <li>Accuracy</li>
+                        <li>Precision</li>
+                        <li>Recall</li>
+                        <li>F1 Score</li>
+                    </ul>
+
+                    <li><strong>Receiver Operating Characteristic (ROC) Curve</strong></li>
+
+                    <li><strong>ROC Area Under the Curve (AUC)</strong></li>
+
+                </ul>
+            </h4>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+
+        <div class="slides mySlides">
+            <h1>Applications of Our Project:</h1>
+            <h4>
+                <ul> 
+                    <li><strong>Clinical Decision Support: </strong>The developed model can serve as a valuable tool for healthcare professionals in making informed decisions about patient care. It can assist doctors in identifying individuals at a higher risk of heart disease and enable timely interventions.</li>
+
+                    <li><strong>Preventive Health Screening: </strong>It can be integrated into health screening programs to assess the risk of heart disease in individuals during routine check-ups.</li>
+
+                    <li><strong>Telemedicine and Remote Monitoring: </strong>In the era of telemedicine, the predictive model can be incorporated into remote monitoring systems. Patients can use wearable devices to collect relevant health data, and the model can analyze this information to provide ongoing risk assessments and personalized health recommendations.</li>
+
+                    <li><strong>Integrated Electronic Health Records (EHR):</strong>Integrating the model into electronic health record systems allows for seamless risk assessment during routine clinical visits.</li>
+
+                </ul>
+            </h4>
+        </div>
+        
+
+    </div>
+    <div class="arr-buttons">
+        <button class="prev" onclick="plusDivs(-1)">&#10094;</button>
+        <p id="slide-number"></p>
+        <button class="next" onclick="plusDivs(+1)">&#10095;</button>
+    </div>
+</div>
+
+
+
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+
+        if (n > x.length) {
+            slideIndex = x.length
+        }
+
+        if (n < 1) {
+            slideIndex = 1
+        }
+
+        document.getElementById("slide-number").innerHTML = slideIndex;
+
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+
+        x[slideIndex-1].style.display = "block";
+    }
+</script>
+
+{% endblock content %}

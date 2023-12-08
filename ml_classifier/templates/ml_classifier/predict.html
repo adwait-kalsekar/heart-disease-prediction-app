@@ -1,0 +1,208 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <p>You can try our project at - <strong>{{hosted_url}}</strong></p>
+    {% if prediction %}
+        <div class="result">
+            <h3>This Person {{prediction}}</h3>
+        </div>
+    {% endif %}
+    <h2>Predict the results By entering the information below:</h2>
+    <p>(Check Out the <a href="{% url 'data_dictionary' %}">Data Dictionary here!</a>)</strong></p>
+    
+    <div class="input-form">
+        <form action="/predict/" method="post">
+            {% csrf_token %}
+            
+            <div class="input-div">
+                <label htmlFor="">
+                    Name :
+                </label>
+                <input name="name" type="text" required/>
+            </div>
+
+            <div class="input-div">
+                <label htmlFor="">
+                    Age (18-120):
+                </label>
+                <input name="age" type="number" min="18" max="120" required/>
+            </div>
+
+            <div class="input-div">
+                <label>Gender: </label>
+                <select name="sex" required>
+                    <option value="" disabled selected>
+                        -- Choose Option --
+                    </option>
+                    <option value="1">
+                        Male
+                    </option>
+                    <option value="0">
+                        Female
+                    </option>
+                </select>
+            </div>
+
+            <div class="input-div">
+                <label>Chest Pain Type: </label>
+                <select name="cp" required>
+                    <option value="" disabled selected>
+                        -- Choose Option --
+                    </option>
+                    <option value="0">
+                        Typical Angina
+                    </option>
+                    <option value="1">
+                        Atypical Angina
+                    </option>
+                    <option value="2">
+                        Non-Anginal Pain
+                    </option>
+                    <option value="3">
+                        Asymptomatic
+                    </option>
+                </select>
+            </div>
+
+            <div class="input-div">
+                <label htmlFor="">
+                    Resting Blood Pressure (90-200 in mm Hg):
+                </label>
+                <input name="trestbps" type="number" min="90" max="200" required/>
+            </div>
+
+            <div class="input-div">
+                <label htmlFor="">
+                    Serum Cholestoral (120-600 in mg/dl):
+                </label>
+                <input name="chol" type="number" min="120" max="600" required/>
+            </div>
+
+            <div class="input-div">
+                <label>Fasting Blood Sugar (> 120 mg/dl): </label>
+                <select name="fbs" required>
+                    <option value="" disabled selected>
+                        -- Choose Option --
+                    </option>
+                    <option value="1">
+                        Yes
+                    </option>
+                    <option value="0">
+                        No
+                    </option>
+                </select>
+            </div>
+
+            <div class="input-div">
+                <label>Resting Electrocardiographic Results</label>
+                <select name="restecg" required>
+                    <option value="" disabled selected>
+                        -- Choose Option --
+                    </option>
+                    <option value="0">
+                        Normal
+                    </option>
+                    <option value="1">
+                        ST-T wave abnormality
+                    </option>
+                    <option value="2">
+                        Left Ventricular Hypertrophy
+                    </option>
+                </select>
+            </div>
+
+            <div class="input-div">
+                <label htmlFor="">
+                    Maximum Heart Rate Achieved (70-220):
+                </label>
+                <input name="thalach" type="number" min="70" max="220" required/>
+            </div>
+
+            <div class="input-div">
+                <label>Exercise Induced Angina: </label>
+                <select name="exang" required>
+                    <option value="" disabled selected>
+                        -- Choose Option --
+                    </option>
+                    <option value="1">
+                        Yes
+                    </option>
+                    <option value="0">
+                        No
+                    </option>
+                </select>
+            </div>
+
+            <div class="input-div">
+                <label htmlFor="">
+                    ST Depression Induced by Exercise (0.0-6.5):
+                </label>
+                <input name="oldpeak" type="number" min="0" max="6.5" required/>
+            </div>
+
+            <div class="input-div">
+                <label>Slope of Peak Exercise ST segment: </label>
+                <select name="slope" required>
+                    <option value="" disabled selected>
+                        -- Choose Option --
+                    </option>
+                    <option value="0">
+                        Upsloping
+                    </option>
+                    <option value="1">
+                        Flat
+                    </option>
+                    <option value="2">
+                        Downsloping
+                    </option>
+                </select>
+            </div>
+
+            <div class="input-div">
+                <label>No. of major vessels (0-4): </label>
+                <select name="ca" required>
+                    <option value="" disabled selected>
+                        -- Choose Option --
+                    </option>
+                    <option value="0">
+                        0
+                    </option>
+                    <option value="1">
+                        1
+                    </option>
+                    <option value="2">
+                        2
+                    </option>
+                    <option value="3">
+                        3
+                    </option>
+                    <option value="4">
+                        4
+                    </option>
+                </select>
+            </div>
+
+            <div class="input-div">
+                <label>Thalium: </label>
+                <select name="thal" required>
+                    <option value="" disabled selected>
+                        -- Choose Option --
+                    </option>
+                    <option value="0">
+                        Normal
+                    </option>
+                    <option value="1">
+                         Fixed Defect
+                    </option>
+                    <option value="2">
+                        Reversable Defect
+                    </option>
+                </select>
+            </div>
+            <button type="submit">
+                <h4>PREDICT</h4>
+            </button>
+        </form>
+    </div>
+
+{% endblock content %}
